@@ -57,7 +57,7 @@ public class MediaPlayerPlugin implements MethodCallHandler, ViewDestroyListener
     @Override
     public void onServiceDisconnected(ComponentName componentName) {
     Log.i("ServiceConnnection", "Service disconnected");
-  
+
     }
   };
 
@@ -228,7 +228,7 @@ public class MediaPlayerPlugin implements MethodCallHandler, ViewDestroyListener
     case "retry":
       player.retry();
       result.success(null);
-      break;  
+      break;
     default:
       result.notImplemented();
       break;

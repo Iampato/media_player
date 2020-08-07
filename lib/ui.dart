@@ -214,7 +214,9 @@ class VideoPlayerViewState extends State<VideoPlayerView> {
         aspectRatio: (aspectRatio > 0.0) ? aspectRatio : 16 / 9,
         child: (widget.player.textureId != null)
             ? Texture(textureId: widget.player.textureId)
-            : Container(color: Colors.black),
+            : Container(
+                color: Colors.black,     
+              ),
       ),
     );
   }
