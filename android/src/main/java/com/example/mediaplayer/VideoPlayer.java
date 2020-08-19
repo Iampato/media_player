@@ -100,12 +100,12 @@ class VideoPlayer {
         Uri uri = Uri.parse((String) dataSource.get("source"));
 
         DataSource.Factory dataSourceFactory;
-        if (uri.getScheme().equals("asset") || uri.getScheme().equals("file")) {
-            dataSourceFactory = new DefaultDataSourceFactory(context, "ExoPlayer");
-        } else {
+        if (uri.getScheme().equals("http") || uri.getScheme().equals("https")) {
             dataSourceFactory = new DefaultHttpDataSourceFactory("ExoPlayer", null,
                     DefaultHttpDataSource.DEFAULT_CONNECT_TIMEOUT_MILLIS,
                     DefaultHttpDataSource.DEFAULT_READ_TIMEOUT_MILLIS, true);
+        } else {
+            dataSourceFactory = new DefaultDataSourceFactory(context, "ExoPlayer");
         }
 
         mediaSource = buildMediaSource(uri, dataSourceFactory, context);
